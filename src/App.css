@@ -4,7 +4,11 @@
     align-items: center;
     width: 100%;
     min-height: 100vh;
-    background-image: url('https://content.r9cdn.net/rimg/dimg/59/66/56b9c63c-city-13346-164dcfc0a70.jpg?width=1366&height=768&xhint=3450&yhint=2249&crop=true')
+    background: url('https://wp.es.aleteia.org/wp-content/uploads/sites/7/2020/10/WEB3-LA-PAZ-BOLIVIA-Shutterstock_1791153806-R.M.-Nunes.jpg?quality=100&strip=all') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .card {
