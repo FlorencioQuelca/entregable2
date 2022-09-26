@@ -2,12 +2,14 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 
 import './App.css'
-import WeaterCard from './components/WeaterCard'
+import Loadding from './components/Loadding'
+import WeatherCard from './components/WeatherCard'
 
 function App() {
 
   const [coords , setCoords] = useState()
-  const [weater , setWeater] = useState()
+  const [weather , setWeather] = useState()
+  const [temperature, setTemperature] = useState()
   
   useEffect(() => {
     const success=(pos)=>{
@@ -30,18 +32,28 @@ function App() {
       const url=`https://api.openweathermap.org/data/2.5/weather?lat=${coords.lat}&lon=${coords.lon}&appid=${APIKEY}`
 
       axios.get(url).then(res =>{
-    setWeater(res.data)
+            const celsius=(res.data.main.temp-273.15).toFixed(0)
+            const farenheit =(celsius*9/5+32).toFixed(0)
+            setTemperature({celsius,farenheit})
+           setWeather(res.data)
       }).catch(err=>{
         console.log(err)
       })
     }
 
   },[coords]) 
-
+ console.log(weather)
 
   return (
     <div className="App">
-         <WeaterCard  weater={weater}/>
+      {
+        weather ?
+        <WeatherCard  weather={weather}
+                      temperature={temperature}  
+        />
+        :
+        <Loadding/>
+      }
     </div>
   )
 }
