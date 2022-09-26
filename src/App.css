@@ -1,0 +1,85 @@
+.App {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('https://content.r9cdn.net/rimg/dimg/59/66/56b9c63c-city-13346-164dcfc0a70.jpg?width=1366&height=768&xhint=3450&yhint=2249&crop=true')
+}
+
+.card {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(67, 202, 212, 0.6);
+    box-shadow: 0 0 10px rgba(32, 230, 252, 0.7);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    color: white;
+}
+
+.card__title {
+    grid-column: span 2;
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 8px;
+}
+
+.card__subtitle {
+    grid-column: span 2;
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.card__second-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.card__list {
+    display: grid;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.card__span {
+    color: aqua;
+}
+
+.card__item {
+    color: #fffa;
+}
+
+.card__temperature {
+    grid-column: span 2;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.card__btn {
+    grid-column: span 2;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    background-color: aqua;
+    border: none;
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 1px 1px 15px #0009;
+    cursor: pointer;
+    transition: transform 100ms ease;
+    margin-bottom: 10px;
+}
+
+.card__btn:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+    transition: transform 100ms ease;
+}
